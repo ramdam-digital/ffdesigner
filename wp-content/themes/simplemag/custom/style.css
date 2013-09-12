@@ -1,0 +1,25 @@
+#masthead .top-strip{height: 50px; background: #000;}
+
+#top-ads{height: 90px;width: 720px;	border: 1px solid #000;}
+
+#masthead .main-menu .sub-menu {border-top-color: #000;}
+
+
+#masthead .main-menu > ul > li.sub-hover > a:after{border-color:transparent transparent #000;}
+
+.grids.masonry-layout.entries.masonry article.post{height: 450px;}
+.entries article .entry-image{height: 300px;}
+.entry-summary p{height: 100px; text-align: justify; font-size: 14px;}
+article.post h2.entry-title{text-transform: none; text-align: left; margin-bottom: 0; padding-bottom: 0;}
+article.post .entry-meta{text-transform: none; text-align: left; font-size: 16px;}
+article.post .entry-meta a{text-decoration: none; font-weight: bold; color:#BBB;}
+
+
+aside.sidebar{background: #000;}
+.sidebar #searchform{background: #fff;}
+aside.sidebar .widget{border-top: 1px solid #fff;}
+aside.sidebar .widget .textwidget{color: #fff;}
+aside.sidebar .widget h3{color: #FFF; font-size: 14px; margin-bottom: 10px;}
+
+aside.sidebar .widget .newsletter-email{width: 85%;}
+aside.sidebar .widget .newsletter-bouton{height: 37px; width: 13%; border: 1px solid #999; background: #111; color: #FFF; font-weight: bold;}

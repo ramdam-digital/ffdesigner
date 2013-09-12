@@ -1,0 +1,11 @@
+11-09-2013 13:10:48 - ERROR - 12680212 - mail> Could not instantiate mail function.
+11-09-2013 13:11:14 - ERROR - 12680208 - mail> Could not instantiate mail function.
+11-09-2013 13:14:34 - ERROR - 16722564 - mail> The following From address failed: digital@ramdam.in : MAIL not accepted from server,530,5.5.1 Authentication Required. Learn more at
+530 5.5.1 http://support.google.com/mail/bin/answer.py?answer=14257 i8sm10953794wib.1 - gsmtp
+<p>SMTP server error: 5.5.1 Authentication Required. Learn more at
+530 5.5.1 http://support.google.com/mail/bin/answer.py?answer=14257 i8sm10953794wib.1 - gsmtp
+</p>
+<p>SMTP server error: 5.5.1 Authentication Required. Learn more at
+530 5.5.1 http://support.google.com/mail/bin/answer.py?answer=14257 i8sm10953794wib.1 - gsmtp
+</p>
+
