@@ -45,7 +45,7 @@ $ti_posts_slider = new WP_Query(
                         <img class="alter" src="<?php echo get_template_directory_uri(); ?>/images/pixel.gif" alt="<?php the_title(); ?>" />
                     <?php } ?>
                     
-                    <header class="entry-header">
+                    <!--<header class="entry-header">
                         <div class="entry-meta">
                            <span class="entry-category"><?php the_category(', '); ?></span>
                            <span class="entry-date"><?php the_time('F j, Y'); ?></span>
@@ -54,6 +54,10 @@ $ti_posts_slider = new WP_Query(
                             <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
                         </h2>
                         <a class="read-more" href="<?php the_permalink() ?>"><?php _e( 'Read More', 'themetext' ); ?></a>
+                    </header>-->
+                    <header class="slide-content">
+                        <h3><?php the_title(); ?></h3>
+                        <p><?php ramdam_summary($post->post_content, 300); ?></p>
                     </header>
                     
                 </li>
