@@ -14,5 +14,12 @@
 		} else { // Output sidebar for categories and posts
 			dynamic_sidebar( 'Magazine' );
 		}
+
     ?>
+    <div id="ads" class="widget">
+		<div class="side-ads">
+    	
+    	</div>
+    </div>
+    
     </aside><!-- .sidebar -->

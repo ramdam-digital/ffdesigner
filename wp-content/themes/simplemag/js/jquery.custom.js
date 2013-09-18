@@ -374,7 +374,7 @@ jQuery(document).ready(function($) {
 	
 	/* Back to Top link */
 	$('.back-top').click(function(){
-		$('html, body').animate({scrollTop:0}, 'fast');
+		$('html, body').animate({scrollTop:0}, 'slow');
 		return false;
 	});
 

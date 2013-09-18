@@ -20,25 +20,14 @@ global $ti_option; // Fetch options stored in $ti_option;
 
 <!-- Meta Viewport -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 <?php 
 // Get the favicon
-if ( $ti_option['site_favicon'] != '' ) { 
-	$site_favicon = $ti_option['site_favicon'];
-} else { 
-	$site_favicon = get_template_directory_uri() . '/images/favicon.ico';
-}
+
+$site_favicon = get_template_directory_uri() . '/images/favicon.ico';
+
 ?>
 <link rel="shortcut icon" href="<?php echo $site_favicon; ?>" />
-<?php 
-// Get the retina favicon
-if ( $ti_option['site_retina_favicon'] != '' ) { 
-	$retina_favicon = $ti_option['site_retina_favicon'];
-} else { 
-	$retina_favicon = get_template_directory_uri() . '/images/retina-favicon.png';
-}
-?>
-<link rel="apple-touch-icon-precomposed" href="<?php echo $retina_favicon; ?>" />
 
 <?php wp_head(); ?>
 

@@ -54,22 +54,23 @@ if (!isset($options['count'])) {$options['count'] = "off";}
        (is_page() && $options['pages'] == 'on') ||
        ((is_home() || is_front_page()) && $options['homepage'] == 'on')) {
 
-		if ($options['count'] == 'on') {
+		/*if ($options['count'] == 'on') {
 			if ($options['countstyle'] == '') {
 				$commentcount = "<p>";
 			} else {
 				$commentcount = "<p class=\"".$options['countstyle']."\">";
 			}
 			$commentcount .= "<fb:comments-count href=".get_permalink()."></fb:comments-count> ".$options['countmsg']."</p>";
-		}
-		if ($options['title'] != '') {
+		}*/
+		/*if ($options['title'] != '') {
 			if ($options['titleclass'] == '') {
 				$commenttitle = "<h3>";
 			} else {
 				$commenttitle = "<h3 class=\"".$options['titleclass']."\">";
 			}
 			$commenttitle .= $options['title']."</h3>";
-		}
+		}*/
+		$content .= '<h3 class="reagir">Réagir à cet article</h3>';
 		$content .= "<!-- Facebook Comments for WordPress: http://3doordigital.com/wordpress/plugins/facebook-comments/ -->".$commenttitle.$commentcount;
 
       	if ($options['html5'] == 'on') {

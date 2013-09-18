@@ -64,7 +64,7 @@
             <header class="entry-header">
                 <div class="entry-meta">
                    <span class="entry-category"><?php the_category(', '); ?></span>
-                   <span class="entry-date"><?php the_time('F j, Y'); ?></span>
+                   <!--<span class="entry-date"><?php the_time('F j, Y'); ?></span>-->
                 </div>
                 <h2 class="entry-title">
                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>

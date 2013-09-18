@@ -1,31 +1,50 @@
+@font-face{font-family: 'Justus';src: url('Justus.ttf');}
+@font-face{font-family: 'HelveticaNeue';src: url('HelveticaNeue.ttf');}
+@font-face{font-family: 'HelveticaLight';src: url('HelveticaLight.ttf');}
+@font-face{font-family: 'HelveticaNeueBold';src: url('HelveticaNeueBold.ttf');}
+
 #masthead .top-strip{height: 50px; background: #000;}
 
 #top-ads{height: 90px;width: 720px;	border: 1px solid #000;}
 
 #masthead .main-menu .sub-menu {border-top-color: #000;}
 
-
+#masthead .main-menu ul li a{font-family: "Justus", Times, serif;font-size: 18px;}
 #masthead .main-menu > ul > li.sub-hover > a:after{border-color:transparent transparent #000;}
 
 .grids.masonry-layout.entries.masonry article.post{height: 450px;}
 .entries article .entry-image{height: 300px;}
-.entry-summary p{height: 100px; text-align: justify; font-size: 14px;}
-article.post h2.entry-title{text-transform: none; text-align: left; margin-bottom: 0; padding-bottom: 0;}
+.entry-summary p{height: 100px; text-align: justify; font-size: 14px;font-family: 'HelveticaLight', arial; color: #000;}
+article.post h2.entry-title{text-transform: none; text-align: left; margin-bottom: 0; padding-bottom: 0; font-family: 'Justus'; font-size: 20px;}
 article.post .entry-meta{text-transform: none; text-align: left; font-size: 16px;}
-article.post .entry-meta a{text-decoration: none; font-weight: bold; color:#BBB;}
+article.post .entry-meta a{text-decoration: none; color:#BBB;font-family: 'HelveticaNeueBold';}
 
 
 aside.sidebar{background: #000;}
+aside.sidebar .widget .side-ads{height: 250px;width: 250px;margin: auto;border: 1px solid #999;}
 .sidebar #searchform{background: #fff;}
 aside.sidebar .widget{border-top: 1px solid #fff;}
 aside.sidebar .widget .textwidget{color: #fff;}
-aside.sidebar .widget h3{color: #FFF; font-size: 14px; margin-bottom: 10px;}
+aside.sidebar .widget h3{color: #FFF; font-size: 18px; margin-bottom: 10px;font-family: 'HelveticaLight', arial; text-transform: none;}
 
 aside.sidebar .widget .newsletter-email{width: 85%;}
 aside.sidebar .widget .newsletter-bouton{height: 37px; width: 13%; border: 1px solid #999; background: #111; color: #FFF; font-weight: bold;}
 
-.flexslider ul.slides li header.slide-content{position: absolute; bottom: 12%; right: 8%; height: 20%; width: 60%; background: #E5E5E5; opacity: 0.9; padding: 10px;}
-.flexslider ul.slides li header.slide-content h3{font-size: 32px; color: #000; font-family: "Times New Roman", Times, serif; font-weight: bold;}
-.flexslider ul.slides li header.slide-content p{font-size: 16px; color: #222;}
+.flexslider ul.slides li header.slide-content{position: absolute; bottom: 12%; right: 8%; height: 25%; width: 60%; background: #E5E5E5; opacity: 0.9; padding: 10px;}
+.flexslider ul.slides li header.slide-content h3{font-size: 50px; color: #000; font-family: "Justus", Times, serif;}
+.flexslider ul.slides li header.slide-content p{font-size: 16px; color: #222; font-family: 'HelveticaLight', sans-serif;}
 
-.featured-posts header.section-header h2.title{border-top: 1px solid #000; border-bottom: 1px solid #000; padding: 20px 0; text-transform: none; font-family:  "Times New Roman", Times, serif;}
+.featured-posts header.section-header h2.title{border-top: 2px solid #666; border-bottom: 2px solid #666; padding: 20px 0; text-transform: none; font-family:  "Justus", Times, serif;}
+
+section.featured-posts{border-bottom: 2px solid #666;}
+
+.single .entry-content h3.reagir{color:#FFF; background: #222; font-size: 16px; padding: 3px 10px; margin:0;-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+text-transform: uppercase;}
+
+footer#ffd-footer{width: 1050px; margin: auto; height: 60px; background: #000;position: relative;}
+#ffd-footer .totop{position: absolute; width: 15px; height: 15px; top: -15px; right:-15px; background: #000;}

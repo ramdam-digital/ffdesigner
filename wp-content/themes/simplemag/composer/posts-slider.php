@@ -57,7 +57,7 @@ $ti_posts_slider = new WP_Query(
                     </header>-->
                     <header class="slide-content">
                         <h3><?php the_title(); ?></h3>
-                        <p><?php ramdam_summary($post->post_content, 300); ?></p>
+                        <p><?php ramdam_summary($post->post_content, 150); ?></p>
                     </header>
                     
                 </li>

@@ -7,7 +7,7 @@
 **/ 
 ?>
 
-    <footer id="footer" role="contentinfo" class="animated">
+    <!--<footer id="footer" role="contentinfo" class="animated">
     
         <?php get_sidebar( 'footer' ); // Output the footer sidebars ?>
         
@@ -24,7 +24,12 @@
             </div>
         </div>
             
-    </footer><!-- #footer -->
+    </footer>-->
+    <!-- #footer -->
+
+    <footer id="ffd-footer" role="contentinfo" class="animated">
+        <div class="totop back-top" ></div>
+    </footer>
     
     </div><!-- #inner-wrap -->
 </div><!-- #outer-wrap -->
