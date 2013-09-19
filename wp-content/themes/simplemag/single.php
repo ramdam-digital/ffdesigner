@@ -21,14 +21,17 @@ global $ti_option;
       
         <header class="entry-header wrapper">
             
-            <div class="entry-meta">
-               <span class="entry-category"><?php the_category(', '); ?></span>
-               <span class="entry-date"><?php the_date('F j, Y'); ?></span>
-            </div>
+            
             
             <h1 class="entry-title single-title">
                 <span><?php the_title(); ?></span>
             </h1>
+
+            <div class="entry-meta entry-center">
+               <span class="entry-category"><?php the_category(', '); ?></span> |
+               <span class="entry-date"><?php the_date('j F Y'); ?></span> |
+               par <span class="entry-author"><?php the_author(); ?></span> 
+            </div>
             
         </header>
 
@@ -187,16 +190,27 @@ global $ti_option;
                 }
                 ?>
                 
-
+                <hr class="hr-nav">
 				<nav class="single-box clearfix nav-single">
                     <?php
                     $prev_post = get_previous_post();
 					$next_post = get_next_post();
-					
+                    
                     if ( !empty( $prev_post ) ){ 
+                        $post_format = get_post_format( $prev_post->ID );
+                        if($post_format=='video'){
+                            $video_path = get_post_meta( $prev_post->ID, "add_video_url", true );
+                            $video_key = explode('?v=', $video_path);
+                            $video_key = substr($video_key[1], 0, 11);
+                            $prev_thumb = "http://img.youtube.com/vi/$video_key/default.jpg";
+                        }else{
+                            $thumb      = wp_get_attachment_image_src( get_post_thumbnail_id($prev_post->ID), 'thumbnail' );
+                            $prev_thumb = $thumb['0'];
+                        }
                     ?>
                     <div class="nav-previous">
-                        <?php previous_post_link( '%link', '<i class="icon-chevron-left"></i><span class="sub-title">Previous article</span><br />%title' ); ?>
+                        <?php //previous_post_link( '%link', '<i class="icon-chevron-left"></i><span class="sub-title">Article précédent</span>' ); ?>
+                        <a href="<?php echo get_permalink( $prev_post->ID ); ?>" rel="prev" class="tooltip" title="<img src='<?php echo $prev_thumb;?>' width='48' height='48' style='float:left; margin-right:5px;' /> <h3 style='margin:7px;'><?php echo $prev_post->post_title;?></h3>"><i class="icon-chevron-left"></i><span class="sub-title">Article précédent</span></a>
                     </div>
                     <?php } ?>
                     
@@ -206,9 +220,20 @@ global $ti_option;
                     
                     <?php
                     if ( !empty( $next_post ) ){ 
+                        $post_format = get_post_format( $next_post->ID );
+                        if($post_format=='video'){
+                            $video_path = get_post_meta( $next_post->ID, "add_video_url", true );
+                            $video_key = explode('?v=', $video_path);
+                            $video_key = substr($video_key[1], 0, 11);
+                            $next_thumb = "http://img.youtube.com/vi/$video_key/default.jpg";
+                        }else{
+                            $thumb      = wp_get_attachment_image_src( get_post_thumbnail_id($next_post->ID), 'thumbnail' );
+                            $next_thumb = $thumb['0'];
+                        }
                     ?>
                     <div class="nav-next">
-                        <?php next_post_link( '%link', '<i class="icon-chevron-right"></i><span class="sub-title">Next article</span><br />%title' ); ?>
+                        <?php //next_post_link( '%link', '<i class="icon-chevron-right"></i><span class="sub-title">Article suivant</span>' ); ?>
+                        <a href="<?php echo get_permalink( $next_post->ID ); ?>" rel="prev" class="tooltip" title="<img src='<?php echo $next_thumb;?>' width='48' height='48' style='float:left; margin-right:5px;' /> <h3 style='margin:7px;'><?php echo $next_post->post_title;?> bla bla bla</h3>"><i class="icon-chevron-right"></i><span class="sub-title">Article suivant</span></a>
                     </div>
                     <?php } ?>
                 </nav><!-- .nav-single -->

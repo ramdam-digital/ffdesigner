@@ -31,6 +31,7 @@ $site_favicon = get_template_directory_uri() . '/images/favicon.ico';
 
 <?php wp_head(); ?>
 
+<link rel='stylesheet' href="<?php echo get_template_directory_uri().'/custom/tooltips/css/tooltipster.css';?>" type='text/css' media='all' />
 <link rel='stylesheet' href="<?php echo get_template_directory_uri().'/custom/style.css';?>" type='text/css' media='all' />
 </head>
 

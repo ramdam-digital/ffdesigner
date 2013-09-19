@@ -51,7 +51,7 @@
                     } elseif('video' == get_post_format()){ 
                         $video_path = get_post_meta( $post->ID, "add_video_url", true );
                         $video_key = explode('?v=', $video_path);
-                        $video_key = $video_key[1];
+                        $video_key = substr($video_key[1], 0, 11);
                     ?>
 
                     <img src="http://img.youtube.com/vi/<?php echo $video_key;?>/hqdefault.jpg" >

@@ -2,6 +2,9 @@
 	
 jQuery(document).ready(function($) {	
 		
+
+	$('.tooltip').tooltipster();
+		
 	/* Nav Menu */
 	$('#masthead nav ul > li:has(.sub-menu)').hoverIntent(showMenu,hideMenu);
 	

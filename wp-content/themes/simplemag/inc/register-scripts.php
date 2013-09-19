@@ -63,10 +63,15 @@ function ti_theme_scripts(){
 		
 	// jQuery plugins
 	wp_enqueue_script( 'assets', get_template_directory_uri() . '/js/jquery.assets.js', 'jquery', '1.0', true );
-		
+
+
+	wp_enqueue_script( 'tooltipster', get_template_directory_uri() . '/custom/tooltips/js/jquery.tooltipster.min.js', 'jquery', '1.0', true );
 	// Custom jQuery scripts
 	wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/jquery.custom.js', 'jquery', '1.0', true );
 	
+
+	
+
 }
 	
 add_action( 'wp_enqueue_scripts', 'ti_theme_scripts' );

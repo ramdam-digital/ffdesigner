@@ -16,9 +16,9 @@
 		}
 
     ?>
-    <div id="ads" class="widget">
-		<div class="side-ads">
-    	
+    <div id="banner" class="widget">
+		<div class="side-banner">
+    		
     	</div>
     </div>
     

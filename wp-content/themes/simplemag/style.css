@@ -315,7 +315,7 @@ a,
 
 }
 
-#masthead .main-menu > ul > li:after {
+/*#masthead .main-menu > ul > li:after {
 	content:"|";
 	color:#d6d6d6;
 	font:normal 24px/24px Arial;
@@ -323,7 +323,7 @@ a,
 	float:left;
 	width:6px;
 	margin-top:14px;
-}
+}*/
 
 #masthead .main-menu > ul > li:last-child:after {
 	display:none;
