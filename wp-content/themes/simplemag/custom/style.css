@@ -51,7 +51,8 @@ aside.sidebar .widget .newsletter-bouton{height: 37px; width: 13%; border: 1px s
 
 .featured-posts header.section-header h2.title{border-top: 1px solid #000; border-bottom: 1px solid #000; padding: 20px 0; text-transform: none; font-family:  "Justus", Times, serif;}
 
-section.featured-posts{border-bottom: 2px solid #666;}
+section.featured-posts{border-bottom: 1px solid #000;}
+section.featured-posts.no-border{border:none; margin-top: 50px;}
 
 .single .entry-content h3.reagir{color:#FFF; background: #222; font-size: 16px; padding: 3px 10px; margin:0;-webkit-border-top-left-radius: 5px;-webkit-border-top-right-radius: 5px;-moz-border-radius-topleft: 5px;-moz-border-radius-topright: 5px;border-top-left-radius: 5px;border-top-right-radius: 5px;text-transform: uppercase;}
 

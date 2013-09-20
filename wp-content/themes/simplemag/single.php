@@ -238,12 +238,7 @@ global $ti_option;
                     <?php } ?>
                 </nav><!-- .nav-single -->
 
-                <?php
-                // Show/Hide related posts
-                if ( $ti_option['single_related'] == 1 ) {
-                	get_template_part( 'inc/related', 'posts' );
-                }
-                ?>
+                
                 
                 <?php comments_template(); ?>
         
@@ -255,7 +250,16 @@ global $ti_option;
                 </div>
             </div><!-- .grids -->
             <?php endif; ?>
-            
+
+
+            <?php
+            // Show/Hide related posts
+            if ( $ti_option['single_related'] == 1 ) {
+                get_template_part( 'inc/relateds', 'posts' );
+            }
+            ?>
+
+
             </div><!-- .wrapper -->
         </article>
               
