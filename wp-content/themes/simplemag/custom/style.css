@@ -4,7 +4,17 @@
 @font-face{font-family: 'HelveticaNeueBold';src: url('HelveticaNeueBold.ttf');}
 
 #masthead{margin-bottom: 30px;}
-#masthead .top-strip{height: 50px; background: #000;}
+#masthead .top-strip{height: 50px; background: #000; margin: 0 auto; width: 1050px;}
+#masthead .top-strip .left{float: left; height: 50px;}
+#masthead .top-strip .logo{float: left; text-align: left; height: 50px; border-right: 2px solid #FFF; }
+#masthead .top-strip .logo img{margin: 12px 24px;}
+#masthead .top-strip ul.icon-menu{list-style: none; height: 50px; line-height: 50px;  border-right: 2px solid #FFF; float: left; padding-right: 20px;}
+#masthead .top-strip ul.icon-menu:before{content: none;}
+#masthead .top-strip ul.icon-menu li{display: inline; margin-left: 20px; }
+#masthead .top-strip .contact_link{float: left; height: 50px; line-height: 50px; color: #FFF; text-decoration: none; padding: 0 20px; border-right: 2px solid #FFF;font-family: 'Helvetica', arial;}
+#masthead .top-strip .search-form{float: left; height: 50px; line-height: 50px; padding: 0 20px; border-right: 2px solid #FFF;}
+#masthead .top-strip .search-form .search-input{height: 20px; width: 100px; margin-top: 15px; font-size: 12px; background: #000; color: #999; border: none; padding: 0;} 
+#masthead .top-strip .search-form .search-input:focus{outline: none;}
 
 #top-ads{height: 90px;width: 720px;	border: 1px solid #000;}
 

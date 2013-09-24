@@ -48,9 +48,25 @@ $site_favicon = get_template_directory_uri() . '/images/favicon.ico';
             
         <div class="top-strip">
             <div class="wrapper clearfix">
-            
-            
+                <div class="left">
+                <a href="<?php echo home_url( '/' ); ?>" class="logo"><img src="<?php echo get_template_directory_uri() . '/custom/logo.png';?>"></a>
 
+                <ul class="icon-menu">
+                    <li><a href="#"><img src="<?php echo get_template_directory_uri() . '/custom/icone_facebook.png';?>"></a></li>
+                    <li><a href="#"><img src="<?php echo get_template_directory_uri() . '/custom/icone_twitter.png';?>"></a></li>
+                    <li><a href="#"><img src="<?php echo get_template_directory_uri() . '/custom/icone_pinterest.png';?>"></a></li>
+                    <li><a href="#"><img src="<?php echo get_template_directory_uri() . '/custom/icone_instagram.png';?>"></a></li>
+                    <li><a href="#"><img src="<?php echo get_template_directory_uri() . '/custom/icone_youtube.png';?>"></a></li>
+                </ul>
+
+                <a href="#" class="contact_link">Contact</a>
+
+                <div class="search-form">
+                    <input type="text" class="search-input" placeholder="Recherche">
+                    
+                </div>
+
+                </div>
             </div><!-- .wrapper -->
         </div><!-- .top-strip -->
             
