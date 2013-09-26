@@ -20,7 +20,6 @@ global $ti_option; // Fetch options stored in $ti_option;
 
 <!-- Meta Viewport -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 <?php 
 // Get the favicon
 
@@ -28,9 +27,9 @@ $site_favicon = get_template_directory_uri() . '/images/favicon.ico';
 
 ?>
 <link rel="shortcut icon" href="<?php echo $site_favicon; ?>" />
+<link rel='stylesheet' href="<?php echo get_template_directory_uri().'/custom/reset.css';?>" type='text/css' media='all' />
 
 <?php wp_head(); ?>
-
 <link rel='stylesheet' href="<?php echo get_template_directory_uri().'/custom/tooltips/css/tooltipster.css';?>" type='text/css' media='all' />
 <link rel='stylesheet' href="<?php echo get_template_directory_uri().'/custom/style.css';?>" type='text/css' media='all' />
 </head>
@@ -63,14 +62,54 @@ $site_favicon = get_template_directory_uri() . '/images/favicon.ico';
 
                 <div class="search-form">
                     <input type="text" class="search-input" placeholder="Recherche">
-                    
+                    <input type="submit" class="submit" value="">
                 </div>
 
                 </div>
+                <div class="right">
+                    <ul class="menu-right">
+                        <li class="connexion">
+                            <a href="#">Connexion</a>
+                            <div class="box">
+                                <form>
+                                    <!--<p>Vous n'avez pas de compte? <a href="#">Inscrivez-vous</a>.</p>-->
+                                    <p>
+                                        <label class="mini">Nom d'utilisateur</label>
+                                        <input type="text" name="username" class="input">
+                                    </p>
+                                    <p>
+                                        <label>Mot de passe</label>
+                                        <input type="password" name="password" class="input">
+                                    </p>
+                                    <p style="">
+                                        <input type="submit" class="btn" value="Se connecter">
+                                        
+                                    </p>
+                                    <p>
+                                        <a href="#" style="margin-top:5px;">Mot de passe oublié?</a>
+                                    </p>
+                                </form>
+                            </div>
+                        </li>
+                        <li class="sep"></li>
+                        <li><a href="#">Inscription</a></li>
+                    </ul>
+                </div>
+
             </div><!-- .wrapper -->
+
+            <div class="newsletter">
+                <span>Abonnez-vous</span>
+                <div class="cover">
+                    <img src="<?php echo get_template_directory_uri() . '/custom/cover.png';?>">
+                </div>
+            </div>
+
         </div><!-- .top-strip -->
             
         <div class="wrapper">
+
+            
         
             <div id="branding" class="animated">
                 <!-- Logo -->
@@ -97,9 +136,9 @@ $site_favicon = get_template_directory_uri() . '/images/favicon.ico';
                 </span>
                 <?php } ?>-->
 
-                <div id="top-ads">
+            <div class="top-banner" style="height: 90px;width: 720px; border: 1px solid #000; display: block;">
                 
-                </div>
+            </div>
                 
                 
             </div>

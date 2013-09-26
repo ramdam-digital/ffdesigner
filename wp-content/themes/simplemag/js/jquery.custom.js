@@ -1,6 +1,25 @@
  /* Custom Front-End jQuery scripts */
 	
-jQuery(document).ready(function($) {	
+jQuery(document).ready(function($) {
+
+	/*$('#masthead .top-strip .newsletter span').mouseover(function(){
+		$('#masthead .top-strip .newsletter .cover').slideDown();
+	});*/
+
+	$('#masthead .top-strip .newsletter span').click(function(){
+		$('#masthead .top-strip .newsletter .cover').slideToggle();
+	});
+
+	$('#masthead .top-strip .right ul.menu-right li.connexion a').click(function(){
+		$('#masthead .top-strip .right ul.menu-right li.connexion .box').fadeToggle();
+		$('#masthead .top-strip .right ul.menu-right li.connexion').toggleClass('bgwhite');
+	});
+
+	
+
+
+
+	
 		
 
 	$('.tooltip').tooltipster();

@@ -2366,8 +2366,9 @@ article.error404 h1{
 		margin-bottom:0;	
 	}
 	
-	.sidebar,
-	.main-menu,
+	/*.sidebar,
+	.main-menu,*/
+	.slide-content,
 	.secondary-menu,
 	.flex-direction-nav,
 	.posts-slider .entry-header .entry-meta,
