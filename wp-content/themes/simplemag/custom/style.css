@@ -1,7 +1,9 @@
+
 @font-face{font-family: 'Justus';src: url('Justus.ttf');}
-@font-face{font-family: 'HelveticaNeue';src: url('Helvetica.ttf');}
+@font-face{font-family: 'Helvetica';src: url('Helveticaa.ttf');}
 @font-face{font-family: 'HelveticaLight';src: url('HelveticaLight.ttf');}
 @font-face{font-family: 'HelveticaNeueBold';src: url('HelveticaNeueBold.ttf');}
+
 
 #masthead{margin-bottom: 30px;}
 #masthead .top-strip{height: 50px; background: #000; margin: 0 auto; width: 1050px;position: fixed; z-index: 1000; left: 0; right: 0;}
@@ -67,7 +69,7 @@ article.post .entry-meta{text-transform: none; text-align: left; font-size: 16px
 article.post .entry-meta a{text-decoration: none; color:#BBB;font-family: 'HelveticaNeueBold';}
 
 
-aside.sidebar{background: #000;}
+aside.sidebar{background: #000; margin-bottom: 20px;}
 aside.sidebar .widget .side-banner{height: 250px;width: 250px;margin: auto;border: 1px solid #FFF;}
 .sidebar #searchform{background: #fff;}
 aside.sidebar .widget{border-top: 1px solid #fff;}
@@ -96,15 +98,24 @@ section.featured-posts.no-border{border:none; margin-top: 50px;}
 
 footer#ffd-footer{width: 1050px; margin: auto; height: 60px; background: #000;position: relative;}
 #ffd-footer .totop{position: absolute; width: 15px; height: 15px; top: -15px; right:-15px; cursor: pointer; background: url(btt.png) no-repeat; }
-#ffd-footer ul.footer-menu{list-style: none; margin: 0; padding: 0}
-#ffd-footer ul.footer-menu li{display: inline;}
-#ffd-footer ul.footer-menu li a{color: #fff; text-decoration: none; font-size: 12px;}
+#ffd-footer ul.footer-menu{list-style: none; margin: 0; padding: 0; position: absolute; left: 15px; top: 10px;}
+#ffd-footer ul.footer-menu li{display: inline; margin-right: 10px;}
+#ffd-footer ul.footer-menu li a{color: #fff; text-decoration: none; font-size: 11px; font-family: 'Helvetica', sans-serif;}
+#ffd-footer .copy{margin: 0; padding: 0; position: absolute; left: 15px; bottom: 5px; font-size: 9px; color: #999;}
+
+#ffd-footer ul.icon-menu{list-style: none; position: absolute; top: 10px; right: 15px;}
+#ffd-footer ul.icon-menu:before{content: none;}
+#ffd-footer ul.icon-menu li{display: inline; margin-left: 10px; }
+#ffd-footer ul.icon-menu li img{border: none; max-height: 12px; max-width: 12px;}
+
+
 
 #content .wrapper .home-section.latest-posts{margin-top: 30px;}
 
 /****************************** Article Style ******************************/
 section#content article header h1.single-title{font-family: 'Justus', Times, serif; font-size: 50px; text-transform: none; margin-bottom: 0;}
 section#content article header.wrapper{border-bottom: 1px solid #000; padding-bottom: 30px; margin-bottom: 30px;}
+section#content article header.entry-header{border-bottom: none; margin-bottom: 5px;}
 section#content article header .entry-meta{font-family: 'Helvetica', sans-serif;letter-spacing:2px;}
 section#content article header .entry-center{text-align: center;}
 section#content article header .entry-meta .entry-author{text-transform: uppercase;}
@@ -117,3 +128,29 @@ hr.hr-nav{border: none; border-top: 1px solid #000;}
 section#content article .single-box.nav-single i.icon-chevron-right{background: url(next-article.png) no-repeat; width: 34px; height: 50%; top: 46%;}
 section#content article .single-box.nav-single i.icon-chevron-left{background: url(prev-article.png) no-repeat; width: 34px; height: 50%; top: 46%;}
 section#content article .single-box.nav-single i:before{content:none;}
+
+section#content header.entry-header{border-bottom: 1px solid #000; padding-bottom: 0px; margin-bottom: 30px;}
+section#content header.entry-header h1.entry-title.page-title{text-transform: none; font-family: 'Justus', Times, serif; letter-spacing: 0;}
+
+
+section#content article table.contact-tab td{vertical-align: middle; background: #FFF;}
+section#content article table.contact-tab td.ctn{padding-left: 20px;}
+section#content article table.contact-tab td.ctn p{font-size: 18px;} 
+#form-area{background: #F1F1F2; width: 94%; margin: 30px 0; padding: 3%;}
+#form-area .form-contact{width: 49%; float: left;}
+#form-area .map-contact{width: 49%; float: right;}
+#form-area .form-contact table{width: 90%;}
+#form-area .form-contact table input[type="text"]{width: 100%;border: 1px solid #000; height: 20px; font-size: 12px; padding: 0 5px;}
+#form-area .form-contact table label{margin: 10px; font-family:'Helvetica', Helvetica, sans-serif; font-size: 14px;}
+#form-area .form-contact table td{background: #F1F1F2; padding-bottom: 20px;}
+#form-area .form-contact table .area{width: 100%; height: 160px; background: #FFF; border: 1px solid #000; position:relative;}
+#form-area .form-contact table .area textarea{width: 100%;border: none; font-size: 12px; padding: 5px; height: 80%;}
+#form-area .form-contact table .area .button{position: absolute; bottom: 5px; right: 5px; border: none; background: #000; padding: 3px; color: #FFF; font-size: 10px;font-family: 'Helvetica', sans-serif;}
+#form-area .map-contact p.address{margin: 0; padding: 0; text-align: justify; font-size: 14px; font-family:'Helvetica', Helvetica, sans-serif; margin-bottom: 20px;}
+#form-area .map-contact #map-canvas{width: 100%; height: 145px; margin-top: 10px;}
+#form-area .erreur{color:red; font-size: 12px; margin: 15px 10px;}
+#form-area .succes{color:green; font-size: 12px; margin: 15px 10px;}
+
+@media only screen and (max-width: 1049px) {
+	footer#ffd-footer{width: 90%;}
+}

@@ -21,7 +21,7 @@
                 $video_key = substr($video_key[1], 0, 11);
             ?>
 
-            <img src="http://img.youtube.com/vi/<?php echo $video_key;?>/hqdefault.jpg" >
+            <img src="http://img.youtube.com/vi/<?php echo $video_key;?>/hqdefault.jpg" style="height:300px; width:300px;">
             <?php }else { ?>
             <img src="<?php echo get_template_directory_uri(); ?>/images/default-image.png" alt="<?php the_title(); ?>" />
             <?php } ?>
@@ -29,13 +29,13 @@
     
 		<?php
         // Add icon to different post formats
-        if ( 'gallery' == get_post_format() ): // Gallery
+        /*if ( 'gallery' == get_post_format() ): // Gallery
             echo '<i class="icon-camera-retro"></i>';
         elseif ( 'video' == get_post_format() ): // Video
             echo '<i class="icon-camera"></i>';
         elseif ( 'audio' == get_post_format() ): // Audio
             echo '<i class="icon-music"></i>';
-        endif;
+        endif;*/
         ?>
 
     </figure>

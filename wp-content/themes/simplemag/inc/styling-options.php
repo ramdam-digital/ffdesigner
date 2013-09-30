@@ -11,7 +11,7 @@ global $ti_option;
 ?>
 <style>
 /* Theme Options Styling */
-body {font-family:'HelveticaNeue', Helvetica, sans-serif;}
+body {font-family:'Helvetica', Helvetica, sans-serif;}
 h1, h2, h3, h4, h5, h6, .tagline, .sub-title, .menu a, .widget_pages, .widget_categories, .entry-meta, .entry-note, .read-more, #submit, .single .entry-content p:first-child:first-letter, input#s, .widget_ti-about-site p, .comments .vcard, #respond label, .copyright, #wp-calendar tbody, .latest-reviews i, .score-box .total {font-family: 'HelveticaNeue', Helvetica, sans-serif; font-weight:400;}
 <?php $main_site_color = $ti_option['main_site_color']; ?>
 .sub-menu ul li a:hover, .secondary-menu a:hover, .secondary-menu .current_page_item > a, .top-strip nav > ul > li:hover > a, .footer-sidebar .widget h3, .footer-sidebar .tweetList li i {color:<?php echo $main_site_color ?> !important;}

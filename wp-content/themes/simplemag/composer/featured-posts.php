@@ -28,11 +28,14 @@
     $ti_featured_posts = new WP_Query(
         array(
             'post_type' => 'post',
-            'meta_key' => 'featured_post_add',
-            'meta_value' => '1',
-            'posts_per_page' => 3
+            'posts_per_page' => 3,
+            'orderby' => 'post_date',
+            'order' => 'DESC',
+            'category__not_in' => array( 1 )
         )
     );
+
+
     ?>
     <div class="grids entries">
 

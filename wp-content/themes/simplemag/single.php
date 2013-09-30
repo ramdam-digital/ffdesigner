@@ -163,25 +163,29 @@ global $ti_option;
                 if ( $ti_option['single_social'] == 1 ) { ?>
                 <div id="social-box" class="single-box clearfix">
                     <ul>
-                        <li>
-                            <span><?php _e( 'Share on:', 'themetext' ); ?></span>
-                        </li>
-                        <li>
-                            <a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php the_title(); ?>" target="blank"><?php _e( 'Facebook', 'themetext' ); ?></a>
-                        </li>
-                        <li>
-                            <a href="http://twitter.com/home?status=<?php the_permalink() ?>" target="_blank"><?php _e( 'Twitter', 'themetext' ); ?></a>
-                        </li>
+
                         <li>
                             <?php $pinimage = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
-                            <a href="//pinterest.com/pin/create/button/?url=<?php the_permalink();?>&amp;media=<?php echo $pinimage[0]; ?>&amp;description=<?php the_title(); ?>" target="_blank"><?php _e( 'Pinterest', 'themetext' ); ?></a>
+                            <a href="//pinterest.com/pin/create/button/?url=<?php the_permalink();?>&amp;media=<?php echo $pinimage[0]; ?>&amp;description=<?php the_title(); ?>" target="_blank"><img src="<?php echo get_template_directory_uri() . '/custom/share_pint.png';?>"></a>
                         </li>
+                        
                         <li>
-                            <a href="https://plusone.google.com/_/+1/confirm?hl=en-US&amp;url=<?php the_permalink() ?>" target="_blank"><?php _e( 'Google +', 'themetext' ); ?></a>
+                            <a href="http://twitter.com/home?status=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri() . '/custom/share_tw.png';?>"></a>
                         </li>
+                        
+
+                        <li>
+                            <a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php the_title(); ?>" target="blank"><img src="<?php echo get_template_directory_uri() . '/custom/share_fb.png';?>"></a>
+                        </li>
+                        <!--<li>
+                            <a href="https://plusone.google.com/_/+1/confirm?hl=en-US&amp;url=<?php the_permalink() ?>" target="_blank"><?php _e( 'Google +', 'themetext' ); ?></a>
+                        </li>-->
                     </ul>
                 </div><!-- social-box -->
                 <?php } ?>
+                
+
+                
                 
                 <?php 
                 // Show/Hide author box

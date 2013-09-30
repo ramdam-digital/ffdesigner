@@ -2,7 +2,7 @@
 
 
 
-if(count($_FILES)>0 && isset($_FILES['img'])){
+if(count($_FILES)>0 && isset($_FILES['img']) && !empty($_FILES['img']['name'])){
         include_once ABSPATH . 'wp-admin/includes/media.php';
         include_once ABSPATH . 'wp-admin/includes/file.php';
         include_once ABSPATH . 'wp-admin/includes/image.php';
@@ -26,8 +26,7 @@ if(count($_FILES)>0 && isset($_FILES['img'])){
         } else {
             echo "Possible file upload attack!\n";
         }
-
-    }
+}
 
     include $template_root.'/header.php';
     ?>

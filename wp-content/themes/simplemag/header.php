@@ -51,28 +51,32 @@ $site_favicon = get_template_directory_uri() . '/images/favicon.ico';
                 <a href="<?php echo home_url( '/' ); ?>" class="logo"><img src="<?php echo get_template_directory_uri() . '/custom/logo.png';?>"></a>
 
                 <ul class="icon-menu">
-                    <li><a href="#"><img src="<?php echo get_template_directory_uri() . '/custom/icone_facebook.png';?>"></a></li>
-                    <li><a href="#"><img src="<?php echo get_template_directory_uri() . '/custom/icone_twitter.png';?>"></a></li>
-                    <li><a href="#"><img src="<?php echo get_template_directory_uri() . '/custom/icone_pinterest.png';?>"></a></li>
-                    <li><a href="#"><img src="<?php echo get_template_directory_uri() . '/custom/icone_instagram.png';?>"></a></li>
-                    <li><a href="#"><img src="<?php echo get_template_directory_uri() . '/custom/icone_youtube.png';?>"></a></li>
+                    <li><a href="<?= get_option('facebook', '#');?>"><img src="<?php echo get_template_directory_uri() . '/custom/icone_facebook.png';?>"></a></li>
+                    <li><a href="<?= get_option('twitter', '#');?>"><img src="<?php echo get_template_directory_uri() . '/custom/icone_twitter.png';?>"></a></li>
+                    <li><a href="<?= get_option('pinterest', '#');?>"><img src="<?php echo get_template_directory_uri() . '/custom/icone_pinterest.png';?>"></a></li>
+                    <li><a href="<?= get_option('instagram', '#');?>"><img src="<?php echo get_template_directory_uri() . '/custom/icone_instagram.png';?>"></a></li>
+                    <li><a href="<?= get_option('youtube', '#');?>"><img src="<?php echo get_template_directory_uri() . '/custom/icone_youtube.png';?>"></a></li>
                 </ul>
 
-                <a href="#" class="contact_link">Contact</a>
+                <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="contact_link">Contact</a>
 
                 <div class="search-form">
-                    <input type="text" class="search-input" placeholder="Recherche">
-                    <input type="submit" class="submit" value="">
+                    <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="GET">
+                        <input type="text" class="search-input" placeholder="Recherche" name="s">
+                        <input type="submit" class="submit" value="">
+                    </form>
                 </div>
 
                 </div>
                 <div class="right">
                     <ul class="menu-right">
+                        <?php if ( !is_user_logged_in() ): ?>
                         <li class="connexion">
                             <a href="#">Connexion</a>
                             <div class="box">
-                                <form>
+                                <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="POST">
                                     <!--<p>Vous n'avez pas de compte? <a href="#">Inscrivez-vous</a>.</p>-->
+                                    <input type="hidden" name="attempt" value="1">
                                     <p>
                                         <label class="mini">Nom d'utilisateur</label>
                                         <input type="text" name="username" class="input">
@@ -93,6 +97,13 @@ $site_favicon = get_template_directory_uri() . '/images/favicon.ico';
                         </li>
                         <li class="sep"></li>
                         <li><a href="#">Inscription</a></li>
+                        
+                        <?php else: ?>
+                        <?php $current_user = wp_get_current_user();?>
+                        <li><a>Bienvenue <?php echo ucfirst($current_user->user_login);?></a> <a href="<?php echo wp_logout_url(home_url()); ?>">(Deconnexion)</a></li>
+
+                        <?php endif; ?>
+
                     </ul>
                 </div>
 
