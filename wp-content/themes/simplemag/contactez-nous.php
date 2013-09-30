@@ -78,7 +78,6 @@ add_action( 'wp_footer', 'custom_scripts', 101 );
                             </tr>
                         </table>
                         
-        
                         <div class="page-content">
                         
                             <div id="form-area">
@@ -122,6 +121,7 @@ add_action( 'wp_footer', 'custom_scripts', 101 );
                             </div>
 
                         </div>
+                        
                         
                     </article>
                 
