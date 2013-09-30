@@ -9,3 +9,13 @@
 530 5.5.1 http://support.google.com/mail/bin/answer.py?answer=14257 i8sm10953794wib.1 - gsmtp
 </p>
 
+30-09-2013 17:06:14 - ERROR - 12785040 - mail> The following From address failed: digital@ramdam.in : MAIL not accepted from server,530,5.5.1 Authentication Required. Learn more at
+530 5.5.1 http://support.google.com/mail/bin/answer.py?answer=14257 e1sm28250043wij.6 - gsmtp
+<p>SMTP server error: 5.5.1 Authentication Required. Learn more at
+530 5.5.1 http://support.google.com/mail/bin/answer.py?answer=14257 e1sm28250043wij.6 - gsmtp
+</p>
+<p>SMTP server error: 5.5.1 Authentication Required. Learn more at
+530 5.5.1 http://support.google.com/mail/bin/answer.py?answer=14257 e1sm28250043wij.6 - gsmtp
+</p>
+
+30-09-2013 17:07:09 - ERROR - 16820560 - mail> Could not instantiate mail function.

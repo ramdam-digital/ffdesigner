@@ -84,8 +84,8 @@ add_action( 'wp_footer', 'custom_scripts', 101 );
                                     <?php for($i=1; $i<20; $i++):?>
                                     <li>
                                         <table>
-                                            <tr><td><?php echo $i?></td></tr>
-                                            <tr><td><?php echo $i?></td></tr>
+                                            <tr><td><?php the_post_thumbnail( 'ffd-size', array('style'=>'max-width: 210px') ); ?></td></tr>
+                                            <tr><td><?php the_post_thumbnail( 'ffd-size', array('style'=>'max-width: 210px') ); ?></td></tr>
                                         </table>
                                     </li>
                                     <?php endfor; ?>
