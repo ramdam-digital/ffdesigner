@@ -18,7 +18,6 @@ function custom_scripts(){
                     auto: false,
                     prev: '#prev2',
                     next: '#next2',
-                    pagination: "#pager2",
                     mousewheel: true,
                     swipe: {
                         onMouse: true,
@@ -34,6 +33,17 @@ add_action( 'wp_footer', 'custom_scripts', 101 );
 
 
 
+?>
+
+<?php 
+$args = array(
+        'category'         => 2,
+        'orderby'          => 'post_date',
+        'order'            => 'DESC',
+        'post_type'        => 'post',
+        'post_status'      => 'publish'
+    ); 
+$posts_array = get_posts( $args );
 ?>
 
 
@@ -78,22 +88,54 @@ add_action( 'wp_footer', 'custom_scripts', 101 );
                         
         
                         <div class="page-content">
+
+                            <div id="form-area">
+                                <form class="cform" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="post" enctype="multipart/form-data">
+                                    <?php
+                                        if(isset($_SESSION['ff_message'])){
+                                            echo '<p class="succes">'.$_SESSION['ff_message'].'</p>';
+                                            unset($_SESSION['ff_message']);
+                                        }
+                                        if(isset($_SESSION['ff_error'])){
+                                            echo '<p class="erreur">'.$_SESSION['ff_error'].'</p>';
+                                            unset($_SESSION['ff_error']);
+                                        } 
+                                    ?>
+                                    <h3>Poster ma création</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, sunt, a, corporis quam excepturi ab perferendis vero assumenda officia rem adipisci dolore hic dolor ullam consequatur voluptate temporibus aspernatur reiciendis!</p>
+                                    <p><input type="text" name="titre" placeholder="Ajouter le titre ici"></p>
+                                    <p><textarea name="description" placeholder="Ajouter la desciption ici" rows="6"></textarea></p>
+                                    <p>
+                                        <div class="upload"><input type="file" name="img"></div>
+                                        <input type="submit" name="send-contribution" value="Envoyer">
+                                        <div class="clearfix"></div>
+                                    </p>
+                                </form>
+                            </div>
                             
+
+                            
+                            <h4 class="ffd">Découvrez la communauté FFDesigner</h4>
+
+
+
                             <div class="list_carousel">
                                 <ul id="foo2">
-                                    <?php for($i=1; $i<20; $i++):?>
-                                    <li>
+                                    <?php for($i=0; $i<count($posts_array); $i = $i+2):?>
+                                    <li <?php if(($i>0 && $i==6) || ($i>8 && ($i-6)%8==0)) echo 'class="nomargin"';?>>
                                         <table>
-                                            <tr><td><?php the_post_thumbnail( 'ffd-size', array('style'=>'max-width: 210px') ); ?></td></tr>
-                                            <tr><td><?php the_post_thumbnail( 'ffd-size', array('style'=>'max-width: 210px') ); ?></td></tr>
+                                            <tr><td><?php echo get_the_post_thumbnail( $posts_array[$i]->ID, 'thumbnail' ); ?></td></tr>
+                                            <tr><td><?php if(isset($posts_array[$i+1])) echo get_the_post_thumbnail( $posts_array[$i+1]->ID, 'thumbnail' ); ?></td></tr>
                                         </table>
                                     </li>
                                     <?php endfor; ?>
                                 </ul>
                                 <div class="clearfix"></div>
-                                <a id="prev2" class="prev" href="#">&lt;</a>
-                                <a id="next2" class="next" href="#">&gt;</a>
-                                <div id="pager2" class="pager"></div>
+                                <div id="flip">
+                                    <a id="prev2" class="prev" href="#"><img src="<?php echo get_template_directory_uri() . '/custom/carousel_prev.png';?>"></a>
+                                    <a id="next2" class="next" href="#"><img src="<?php echo get_template_directory_uri() . '/custom/carousel_next.png';?>"></a>
+                                </div>
+                                <div class="clearfix"></div>
                             </div>
           
                         </div>

@@ -31,7 +31,7 @@
             'posts_per_page' => 3,
             'orderby' => 'post_date',
             'order' => 'DESC',
-            'category__not_in' => array( 1 )
+            'category__not_in' => array( 1, 2 )
         )
     );
 
@@ -50,14 +50,14 @@
     
                     <?php 
                     if ( has_post_thumbnail() ) {
-                        the_post_thumbnail( 'medium-size' );
+                        the_post_thumbnail( 'ffd-size' );
                     } elseif('video' == get_post_format()){ 
                         $video_path = get_post_meta( $post->ID, "add_video_url", true );
                         $video_key = explode('?v=', $video_path);
                         $video_key = substr($video_key[1], 0, 11);
                     ?>
 
-                    <img src="http://img.youtube.com/vi/<?php echo $video_key;?>/hqdefault.jpg" >
+                    <img src="http://img.youtube.com/vi/<?php echo $video_key;?>/hqdefault.jpg" style="height:300px; width:300px;" >
                     <?php }else { ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/images/default-image.png" alt="<?php the_title(); ?>" />
                     <?php } ?>

@@ -1,4 +1,7 @@
 <?php
+if ( !session_id() ) {
+  session_start();
+}
 /**
  * La configuration de base de votre installation WordPress.
  *

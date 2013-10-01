@@ -81,13 +81,17 @@ add_action( 'wp_footer', 'custom_scripts', 101 );
                         <div class="page-content">
                         
                             <div id="form-area">
-                            <?php 
-                            global $contact_message;
-                            global $contact_erreur;
-                            if(!empty($contact_message)) echo '<p class="succes">'.$contact_message.'</p>';
-                            if(!empty($contact_erreur)) echo '<p class="erreur">'.$contact_erreur.'</p>';
+                            <?php
+                                if(isset($_SESSION['ff_message'])){
+                                    echo '<p class="succes">'.$_SESSION['ff_message'].'</p>';
+                                    unset($_SESSION['ff_message']);
+                                }
+                                if(isset($_SESSION['ff_error'])){
+                                    echo '<p class="erreur">'.$_SESSION['ff_error'].'</p>';
+                                    unset($_SESSION['ff_error']);
+                                } 
                             ?>
-                                <form action="" method="post">
+                                <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="post">
                                 <div class="form-contact">
                                     <table>
                                         <tr>
@@ -106,6 +110,17 @@ add_action( 'wp_footer', 'custom_scripts', 101 );
                                                     <input type="submit" name="send-contact" value="Envoyer" class="button">
                                                 </div>
                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>
+                                                <?php 
+                                                $x = rand(0,9);
+                                                $y = rand(0,9);
+                                                $_SESSION['captcha'] = $x+$y;
+                                                echo $x.' + '.$y.' ?';
+                                                ?>
+                                                </label></td>
+                                            <td><input type="text" name="captcha"></td>
                                         </tr>
                                     </table>
                                 </div>

@@ -41,7 +41,7 @@
                     <a href="<?php the_permalink(); ?>">
 						<?php 
 						if ( has_post_thumbnail() ) {
-                        	the_post_thumbnail( 'medium-size' );
+                        	the_post_thumbnail( 'ffd-size' );
                         } else { ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/images/default-image.png" alt="<?php the_title(); ?>" />
                         <?php } ?>

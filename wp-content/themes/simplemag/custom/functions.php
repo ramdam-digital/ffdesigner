@@ -1,55 +1,11 @@
 <?php
+require_once('library.php');
 
-function ramdam_summary( $str, $n = 500, $end_char = '&#8230;' ){
+add_filter('show_admin_bar', '__return_false');
 
-	$str = strip_tags($str);
-
-	if (strlen($str) < $n)
-	{
-	    echo $str;
-	    return;
-	}
-
-	$str = preg_replace("/\s+/", ' ', str_replace(array("\r\n", "\r", "\n"), ' ', $str));
-
-	if (strlen($str) <= $n)
-	{
-	    echo $str;
-	    return;
-	}
-
-	$out = "";
-	foreach (explode(' ', trim($str)) as $val)
-	{
-	    $out .= $val.' ';
-
-	    if (strlen($out) >= $n)
-	    {
-	        $out = trim($out);
-	        echo (strlen($out) == strlen($str)) ? $out : $out.$end_char;
-	        return;
-	    }
-	}
-
-	echo $str;
-	return;
-}
-
-function VerifierAdresseMail($adresse)  
-{  
-   $Syntaxe='#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#';  
-   if(preg_match($Syntaxe,$adresse))  
-      return true;  
-   else  
-     return false;  
-}
-
-
-$separateur     = str_replace('index.php', '', $_SERVER['PHP_SELF']);
+/*$separateur     = str_replace('index.php', '', $_SERVER['PHP_SELF']);
 $path           = str_replace($separateur, '', $_SERVER['REQUEST_URI']);
-$slugs          = explode('/', $path);
-
-
+$slugs          = explode('/', $path);*/
 
 if(isset($_POST['attempt']) && $_POST['attempt']==1){
 	$creds = array();
@@ -63,26 +19,64 @@ if(isset($_POST['attempt']) && $_POST['attempt']==1){
 
 
 if(isset($_POST['send-contact'])){
-	$contact_erreur = "";
-	$contact_message = "";
 	if(empty($_POST['nom']) || empty($_POST['email']) || empty($_POST['message'])){
-		$contact_erreur = "Vérifiez les champs!";
+		$_SESSION['ff_error'] = "Vérifiez les champs.";
+		header('location:./contact');
+        exit();
 	}else{
-		if(!VerifierAdresseMail($_POST['email'])){
-			$contact_erreur = "Veillez saisir un email valide!";
+		if($_SESSION['captcha'] != $_POST['captcha']){
+			$_SESSION['ff_error'] = "Code antispam invalide.";
+			header('location:./contact');
+            	exit();
 		}else{
-			$message = 'Email : '.$_POST['email']."\n";
-			$message .= nl2br($_POST['message']);
-			wp_mail( 'aymenlabidi88@gmail.com', 'Message de la part de '.$_POST['nom'], $message );
-			$contact_message = "Votre message est bien envoyé.";
+			if(!VerifierAdresseMail($_POST['email'])){
+				$_SESSION['ff_error'] = "Veillez saisir un email valide!";
+				header('location:./contact');
+            	exit();
+			}else{
+				$message = 'Email : '.$_POST['email']."\n";
+				$message .= nl2br($_POST['message']);
+				wp_mail( 'aymenlabidi88@gmail.com', 'Message de la part de '.$_POST['nom'], $message );
+				$_SESSION['ff_message'] = "Votre message est bien envoyé.";
+				header('location:./contact');
+            	exit();
+			}
 		}
 	}
-	
 }
 
 
-if(count($slugs) == 1 && $slugs['0']=='ffcommunity'){
-    require_once 'ffcommunity.php';
+if(isset($_POST['send-contribution']) && is_user_logged_in()){
+    if(count($_FILES)>0 && isset($_FILES['img']) && !empty($_FILES['img']['name']) && !empty($_POST['titre']) && !empty($_POST['description'])){
+        include_once ABSPATH . 'wp-admin/includes/media.php';
+        include_once ABSPATH . 'wp-admin/includes/file.php';
+        include_once ABSPATH . 'wp-admin/includes/image.php';
+        $upload_overrides = array( 'test_form' => false );
+        $movefile = media_handle_upload( 'img', NULL, array(), $upload_overrides );
+        if ( $movefile ) {
+            $user_ID = get_current_user_id();
+            $my_post = array(
+              'post_title'    => $_POST['titre'],
+              'post_content'  => $_POST['description'],
+              'post_status'   => 'pending',
+              'post_category' => array(2),
+              'post_author'   => $user_ID
+            );
+            $post_id = wp_insert_post( $my_post );
+            set_post_thumbnail( $post_id, $movefile );
+            $_SESSION['ff_message'] = "Votre création est ajoutée avec succès.";
+            header('location:./ffcommunity');
+            exit();
+        } else {
+            $_SESSION['ff_error'] = "Erreur d'upload de votre création.";
+            header('location:./ffcommunity');
+            exit();
+        }
+	}else{
+		$_SESSION['ff_error'] = "Vérifiez les champs.";
+		header('location:./ffcommunity');
+        exit();
+	}
 }
 
 
