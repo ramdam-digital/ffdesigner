@@ -10,14 +10,20 @@
 #masthead .top-strip{height: 50px; background: #000; margin: 0 auto; width: 1050px;position: fixed; z-index: 1000; left: 0; right: 0;}
 #masthead .top-strip .left{float: left; height: 50px;}
 #masthead .top-strip .logo{float: left; text-align: left; height: 50px; border-right: 2px solid #FFF; }
-#masthead .top-strip .logo img{margin: 12px 24px;}
+#masthead .top-strip .logo img{margin: 12px 18px;}
 #masthead .top-strip ul.icon-menu{list-style: none; height: 50px; line-height: 50px;  border-right: 2px solid #FFF; float: left; padding-right: 20px;}
 #masthead .top-strip ul.icon-menu:before{content: none;}
 #masthead .top-strip ul.icon-menu li{display: inline; margin-left: 20px; }
 #masthead .top-strip .contact_link{float: left; height: 50px; line-height: 50px; color: #FFF; text-decoration: none; padding: 0 20px; border-right: 2px solid #FFF;font-family: 'Helvetica', arial; font-size: 12px;}
 #masthead .top-strip .search-form{float: left; height: 50px; line-height: 45px; padding: 0 20px; border-right: 2px solid #FFF;}
-#masthead .top-strip .search-form .search-input{height: 20px; width: 65px; margin-top: 15px; font-size: 12px; background: #000; color: #999; border: none; padding: 0;} 
-#masthead .top-strip .search-form .search-input:focus{outline: none;}
+#masthead .top-strip .search-form .search-input{height: 20px; width: 65px; margin-top: 15px; font-size: 12px; background: #000; color: #999; border: none; padding: 0;
+	-webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;} 
+#masthead .top-strip .search-form .search-input:focus{outline: none; width: 120px;}
 #masthead .top-strip .search-form input[type=submit].submit{background: url(icone_recherche.png) no-repeat; height: 0; width: 0; border: none; margin: 0; padding: 12px;}
 #masthead .top-strip .newsletter{position: absolute; height: 30px; width: 140px; background: #000; right: 2%; bottom: -30px; color: #FFF; text-align: center;}
 #masthead .top-strip .newsletter span{text-transform: uppercase; font-size: 11px; cursor: pointer;}
@@ -164,6 +170,11 @@ section#content article table.contact-tab td.ctn h3{font-size: 20px; text-transf
 #form-area .cform .upload input[type="file"]{ display: block !important; width: 120px !important; height: 30px !important; opacity: 0 !important; overflow: hidden !important;}
 #form-area .cform input[type="submit"]{float: right; background: black; color: #FFF; padding: 3px 10px; font-size: 12px; font-family:'Helvetica', sans-serif; border: none; font-weight: bold; letter-spacing: 1px;}
 
+#form-area .cform.suscribe input[type="text"]{height: auto; padding: 5px; line-height: 20px; font-style: italic; }
+#form-area .cform.suscribe input[type="password"]{height: auto; padding: 5px; line-height: 20px; font-style: italic; }
+
+
+
 
 h4.ffd{padding-bottom: 10px; width:100%; background: url(h4_border.png) no-repeat bottom; color:#000;}
 
@@ -207,8 +218,35 @@ h4.ffd{padding-bottom: 10px; width:100%; background: url(h4_border.png) no-repea
 
 .abonnements{margin: 30px auto;}
 .abn{float: left; width: 33%; text-align: center; position:relative;}
+.abn img{max-width: 100%; max-height: 100%;}
 .abn span{background: url(bulleprix.png) no-repeat; height: 32px; width: 76px; position: absolute; left: 50%; top: -10%; color: #FFF; text-align: center; line-height: 27px; display: none;}
 
-@media only screen and (max-width: 1049px) {
+
+#ffd-top-banner{height: auto;width: 720px; border: none; display: block; padding: 0;}
+#ffd-top-banner img{border: none; padding:0; margin:0;}
+
+@media only screen and (max-width: 1050px) {
 	footer#ffd-footer{width: 90%;}
+	#masthead .top-strip{width: 100%;}
+	#masthead .top-strip ul.icon-menu{display: none;}
+
+}
+
+
+@media only screen and (max-width: 720px) {
+	#ffd-top-banner{display: none;}
+	#masthead .top-strip .contact_link{display: none;}
+	#masthead .top-strip .search-form{display: none;}
+	.list_carousel {margin: 30px auto;	width: 100%;}
+	.list_carousel li {margin-right: 0;}
+	footer#ffd-footer{height: 90px;}
+	#ffd-footer ul.footer-menu{top: 30px;}
+
+}
+
+@media only screen and (max-width: 450px) {
+	#masthead .top-strip .right{display: none;}
+	#masthead .top-strip .logo{border-right: none; }
+	#masthead .top-strip .newsletter{bottom: 0px;}
+
 }

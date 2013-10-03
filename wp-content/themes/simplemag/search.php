@@ -38,7 +38,14 @@
                                 <?php 
                                 if ( has_post_thumbnail() ) {
                                     the_post_thumbnail( 'medium-size' );
-                                } else { ?>
+                                } elseif('video' == get_post_format()){ 
+                                    $video_path = get_post_meta( $post->ID, "add_video_url", true );
+                                    $video_key = explode('?v=', $video_path);
+                                    $video_key = substr($video_key[1], 0, 11);
+                                ?>
+
+                                <img src="http://img.youtube.com/vi/<?php echo $video_key;?>/sddefault.jpg">
+                                <?php }else { ?>
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/default-image.png" alt="<?php the_title(); ?>" />
                                 <?php } ?>
                             </a>
@@ -73,7 +80,7 @@
                     
 				<?php else : ?>
             
-					<p class="message"><?php _e( 'Sorry, nothing found', 'themetext' ); ?></p>
+					<p class="message"><?php _e( 'Aucun résultat trouvé', 'themetext' ); ?></p>
             
                 <?php endif; ?>
 

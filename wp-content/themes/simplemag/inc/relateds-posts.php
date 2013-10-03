@@ -45,7 +45,7 @@ if( $related_posts ):
                         $video_key = substr($video_key[1], 0, 11);
                     ?>
 
-                    <img src="http://img.youtube.com/vi/<?php echo $video_key;?>/hqdefault.jpg" >
+                    <img src="http://img.youtube.com/vi/<?php echo $video_key;?>/sddefault.jpg" style="height:330px; width:330px;" >
                     <?php }else { ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/images/default-image.png" alt="<?php the_title(); ?>" />
                     <?php } ?>

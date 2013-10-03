@@ -63,6 +63,7 @@ $site_favicon = get_template_directory_uri() . '/images/favicon.ico';
                 <div class="search-form">
                     <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="GET">
                         <input type="text" class="search-input" placeholder="Recherche" name="s">
+                        <input type="hidden" name="search-query" value="top">
                         <input type="submit" class="submit" value="">
                     </form>
                 </div>
@@ -96,7 +97,7 @@ $site_favicon = get_template_directory_uri() . '/images/favicon.ico';
                             </div>
                         </li>
                         <li class="sep"></li>
-                        <li><a href="#">Inscription</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/inscription' ) ); ?>">Inscription</a></li>
                         
                         <?php else: ?>
                         <?php $current_user = wp_get_current_user();?>
@@ -147,7 +148,7 @@ $site_favicon = get_template_directory_uri() . '/images/favicon.ico';
                 </span>
                 <?php } ?>-->
 
-            <div class="top-banner" style="height: 90px;width: 720px; border: 1px solid #000; display: block;">
+            <div id="ffd-top-banner">
                 <img src="<?php echo get_template_directory_uri() . '/custom/banner720x90.png';?>">
             </div>
                 

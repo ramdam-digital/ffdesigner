@@ -10,6 +10,10 @@ $slugs          = explode('/', $path);
 
 $myUrl 			= explode('?', $slugs[0]);
 
+if ($myUrl[0]=='inscription' && is_user_logged_in() ){
+    header('location:./');
+    exit();
+}
 
 if($myUrl[0]=='ajax_data'){
 	if(isset($_GET['nom']) && !empty($_GET['nom']) 
@@ -116,4 +120,49 @@ if(isset($_POST['send-contribution']) && is_user_logged_in()){
 }
 
 
+if(isset($_POST['send-inscription'])){
+    if(empty($_POST['nom']) || empty($_POST['email']) || empty($_POST['prenom']) || empty($_POST['password']) || empty($_POST['repassword']) || empty($_POST['username'])){
+		$_SESSION['ff_error'] = "Vérifiez les champs.";
+		header('location:./inscription');
+        exit();
+	}else{
+		if($_SESSION['captcha'] != $_POST['captcha']){
+			$_SESSION['ff_error'] = "Code antispam invalide.";
+			header('location:./inscription');
+            	exit();
+		}else{
+			if(!VerifierAdresseMail($_POST['email'])){
+				$_SESSION['ff_error'] = "Veillez saisir un email valide!";
+				header('location:./inscription');
+            	exit();
+			}else{
+				if($_POST['password']!=$_POST['repassword']){
+					$_SESSION['ff_error'] = "Les deux mots de passe sont différents!";
+					header('location:./inscription');
+	            	exit();
+				}else{
+					$userdata = array(
+									'user_login' 		=> $_POST['username'],
+									'user_pass' 		=> $_POST['password'],
+									'user_email' 		=> $_POST['email'],
+									'user_registered' 	=> Date('Y-m-d H:i:s'),
+									'first_name' 		=> $_POST['prenom'],
+									'last_name' 		=> $_POST['nom']
+								);
 
+					$user = wp_insert_user( $userdata );
+					if(is_wp_error( $user )){
+						$error = $user->get_error_message();
+						$_SESSION['ff_error'] = $error;
+						header('location:./inscription');
+		            	exit();
+					}else{
+						$_SESSION['ff_message'] = "Votre compte est crée avec succès.";
+			            header('location:./inscription');
+			            exit();
+					}
+				}
+			}
+		}
+	}
+}
