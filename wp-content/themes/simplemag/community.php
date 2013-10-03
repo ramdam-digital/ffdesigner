@@ -44,6 +44,7 @@ $args = array(
         'post_status'      => 'publish'
     ); 
 $posts_array = get_posts( $args );
+
 ?>
 
 
@@ -103,13 +104,16 @@ $posts_array = get_posts( $args );
                                     ?>
                                     <h3>Poster ma création</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, sunt, a, corporis quam excepturi ab perferendis vero assumenda officia rem adipisci dolore hic dolor ullam consequatur voluptate temporibus aspernatur reiciendis!</p>
-                                    <p><input type="text" name="titre" placeholder="Ajouter le titre ici"></p>
-                                    <p><textarea name="description" placeholder="Ajouter la desciption ici" rows="6"></textarea></p>
-                                    <p>
-                                        <div class="upload"><input type="file" name="img"></div>
-                                        <input type="submit" name="send-contribution" value="Envoyer">
-                                        <div class="clearfix"></div>
-                                    </p>
+                                    
+                                    <?php if ( is_user_logged_in() ): ?>
+                                        <p><input type="text" name="titre" placeholder="Ajouter le titre ici"></p>
+                                        <p><textarea name="description" placeholder="Ajouter la desciption ici" rows="6"></textarea></p>
+                                        <p>
+                                            <div class="upload"><input type="file" name="img"></div>
+                                            <input type="submit" name="send-contribution" value="Envoyer">
+                                            <div class="clearfix"></div>
+                                        </p>
+                                    <?php endif; ?>
                                 </form>
                             </div>
                             
@@ -124,8 +128,8 @@ $posts_array = get_posts( $args );
                                     <?php for($i=0; $i<count($posts_array); $i = $i+2):?>
                                     <li <?php if(($i>0 && $i==6) || ($i>8 && ($i-6)%8==0)) echo 'class="nomargin"';?>>
                                         <table>
-                                            <tr><td><?php echo get_the_post_thumbnail( $posts_array[$i]->ID, 'thumbnail' ); ?></td></tr>
-                                            <tr><td><?php if(isset($posts_array[$i+1])) echo get_the_post_thumbnail( $posts_array[$i+1]->ID, 'thumbnail' ); ?></td></tr>
+                                            <tr><td><a href="<?php echo get_permalink( $posts_array[$i]->ID ); ?>"><?php echo get_the_post_thumbnail( $posts_array[$i]->ID, 'thumbnail' ); ?></a></td></tr>
+                                            <tr><td><?php if(isset($posts_array[$i+1])): ?> <a href="<?php echo get_permalink( $posts_array[$i+1]->ID ); ?>"><?php echo get_the_post_thumbnail( $posts_array[$i+1]->ID, 'thumbnail' ); ?></a> <?php endif;?></td></tr>
                                         </table>
                                     </li>
                                     <?php endfor; ?>

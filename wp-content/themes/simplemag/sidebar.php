@@ -18,7 +18,7 @@
     ?>
     <div id="banner" class="widget">
 		<div class="side-banner">
-    		
+    		<img src="<?php echo get_template_directory_uri() . '/custom/banner250x250.png';?>">
     	</div>
     </div>
     

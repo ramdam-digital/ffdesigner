@@ -2,10 +2,46 @@
 require_once('library.php');
 
 add_filter('show_admin_bar', '__return_false');
+add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
 
-/*$separateur     = str_replace('index.php', '', $_SERVER['PHP_SELF']);
+$separateur     = str_replace('index.php', '', $_SERVER['PHP_SELF']);
 $path           = str_replace($separateur, '', $_SERVER['REQUEST_URI']);
-$slugs          = explode('/', $path);*/
+$slugs          = explode('/', $path);
+
+$myUrl 			= explode('?', $slugs[0]);
+
+
+if($myUrl[0]=='ajax_data'){
+	if(isset($_GET['nom']) && !empty($_GET['nom']) 
+		&& isset($_GET['prenom']) && !empty($_GET['prenom']) 
+		&& isset($_GET['email']) && !empty($_GET['email']) 
+		&& isset($_GET['tel']) && !empty($_GET['tel']) ){
+		if(VerifierAdresseMail($_GET['email'])){
+			$message = '<p>Nom : '.$_GET['nom'].'</p>';
+			$message .= '<p>Prenom : '.$_GET['prenom'].'</p>';
+			$message .= '<p>Tel : '.$_GET['tel'].'</p>';
+			$message .= '<p>Email : '.$_GET['email'].'</p>';
+			$message .= '<p>Type Abonnement : '.$_GET['abonnement'].'</p>';
+			if($_GET['newsletter']==1){
+				$wpdb->insert( 'wp_newsletter', array(
+														'email' 	=> $_GET['email'],
+														'name' 		=> $_GET['prenom'],
+														'surname' 	=> $_GET['nom'],
+														'status' 	=> 'C',
+														'created'	=> Date('Y-m-d H:i:s')
+													) );
+			}
+			wp_mail( get_option('mail_contact', ''), "Demande d'abonnement de la part de ".$_GET['nom']." ".$_GET['prenom'], $message );
+			die('done');
+		}else{
+			die('<p class="erreur">Adresse mail invalide!</p>');
+		}
+	}else{
+		die('<p class="erreur">Vérifiez les champs!</p>');
+	}
+
+	exit();
+}
 
 if(isset($_POST['attempt']) && $_POST['attempt']==1){
 	$creds = array();
@@ -36,7 +72,7 @@ if(isset($_POST['send-contact'])){
 			}else{
 				$message = 'Email : '.$_POST['email']."\n";
 				$message .= nl2br($_POST['message']);
-				wp_mail( 'aymenlabidi88@gmail.com', 'Message de la part de '.$_POST['nom'], $message );
+				wp_mail( get_option('mail_contact', ''), 'Message de la part de '.$_POST['nom'], $message );
 				$_SESSION['ff_message'] = "Votre message est bien envoyé.";
 				header('location:./contact');
             	exit();

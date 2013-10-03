@@ -112,7 +112,7 @@ $site_favicon = get_template_directory_uri() . '/images/favicon.ico';
             <div class="newsletter">
                 <span>Abonnez-vous</span>
                 <div class="cover">
-                    <img src="<?php echo get_template_directory_uri() . '/custom/cover.png';?>">
+                    <a href="<?php echo esc_url( home_url( '/abonnez-vous' ) ); ?>"><img src="<?php echo get_template_directory_uri() . '/custom/cover.png';?>"></a>
                 </div>
             </div>
 
@@ -148,7 +148,7 @@ $site_favicon = get_template_directory_uri() . '/images/favicon.ico';
                 <?php } ?>-->
 
             <div class="top-banner" style="height: 90px;width: 720px; border: 1px solid #000; display: block;">
-                
+                <img src="<?php echo get_template_directory_uri() . '/custom/banner720x90.png';?>">
             </div>
                 
                 

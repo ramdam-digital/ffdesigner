@@ -30,6 +30,26 @@ function render_pannel(){
 		<h2>FFDesigner Options</h2>
 		<form action="" method="post">
 			<div class="theme-options-group">
+
+				<table spellspacing="0" class="widefat options-table">
+					<thead>
+						<tr>
+							<th colspan="2">Mes paramètres</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">
+								<label for="mail_contact">Mail Contact</label>
+							</th>
+							<td>
+								<input type="text" id="mail_contact" name="options[mail_contact]" value="<?= get_option('mail_contact', '');?>" size="75">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+
 				<table spellspacing="0" class="widefat options-table">
 					<thead>
 						<tr>
@@ -110,6 +130,43 @@ function render_pannel(){
 							</th>
 							<td>
 								<textarea id="address" name="options[address]" cols="74" rows="8"><?= get_option('address', '');?></textarea>
+							</td>
+						</tr>
+						
+					</tbody>
+				</table>
+
+
+				<table spellspacing="0" class="widefat options-table">
+					<thead>
+						<tr>
+							<th colspan="2">Les abonnements</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">
+								<label for="3mois">Abonnement 3 mois</label>
+							</th>
+							<td>
+								<input type="text" id="3mois" name="options[3mois]" value="<?= get_option('3mois', '');?>" size="75">
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<label for="6mois">Abonnement 6 mois</label>
+							</th>
+							<td>
+								<input type="text" id="6mois" name="options[6mois]" value="<?= get_option('6mois', '');?>" size="75">
+							</td>
+						</tr>
+
+						<tr>
+							<th scope="row">
+								<label for="12mois">Abonnement 12 mois</label>
+							</th>
+							<td>
+								<input type="text" id="12mois" name="options[12mois]" value="<?= get_option('12mois', '');?>" size="75">
 							</td>
 						</tr>
 						

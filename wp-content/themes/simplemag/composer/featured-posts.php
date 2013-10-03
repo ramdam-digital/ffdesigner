@@ -31,7 +31,7 @@
             'posts_per_page' => 3,
             'orderby' => 'post_date',
             'order' => 'DESC',
-            'category__not_in' => array( 1, 2 )
+            'category__not_in' => array( 1, 2, 14 )
         )
     );
 

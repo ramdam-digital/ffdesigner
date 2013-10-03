@@ -39,6 +39,7 @@ add_image_size( 'masonry-size', 600, 9999 );
 add_image_size( 'big-size' , 1050, 700, true );
 add_image_size( 'gallery-carousel' , 9999, 580 );
 add_image_size( 'ffd-size', 300, 300, true );
+add_image_size( 'ffd-cover', 150, 195, true );
 
 
 
