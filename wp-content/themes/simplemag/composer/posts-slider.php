@@ -56,8 +56,7 @@ $ti_posts_slider = new WP_Query(
                         <a class="read-more" href="<?php the_permalink() ?>"><?php _e( 'Read More', 'themetext' ); ?></a>
                     </header>-->
                     <header class="slide-content">
-                        <h3><?php the_title(); ?></h3>
-                        <p><?php ramdam_summary($post->post_content, 150); ?></p>
+                        <a href="<?php the_permalink()?>"><?php the_title(); ?></a>
                     </header>
                     
                 </li>

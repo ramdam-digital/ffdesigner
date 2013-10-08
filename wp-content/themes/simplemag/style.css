@@ -2303,7 +2303,7 @@ article.error404 h1{
 }
 
 @media only screen and (max-width: 959px) {
-	#social-box li {
+	/*#social-box li {
 		width:25%;
 	}
 	
@@ -2314,7 +2314,7 @@ article.error404 h1{
 	#social-box li:after {
 		content:normal;
 		padding-left:0;
-	}
+	}*/
 }
 
 @media only screen and (min-width: 960px) and (max-width: 1199px) {
@@ -2444,9 +2444,9 @@ article.error404 h1{
 		-moz-transform:none;
 	}
 	
-	#social-box li {
+	/*#social-box li {
 		font-size:10px;
-	}
+	}*/
 	
 	.nav-next,
 	.nav-previous {
@@ -2502,10 +2502,10 @@ article.error404 h1{
 		margin:0 0 30px;	
 	}
 	
-	#social-box li {
+	/*#social-box li {
 		width:100%;
 		margin-bottom:15px;
-	}
+	}*/
 	
 	#gallery-carousel img {
 		width:100%;

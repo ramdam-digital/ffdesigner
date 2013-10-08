@@ -34,7 +34,7 @@
 			'posts_per_page' => $posts_to_show,
             'meta_key' => 'featured_post_add',
             'meta_value' => '1',
-			'paged' => $paged
+			'paged' => $paged,
 		)
 	);
 

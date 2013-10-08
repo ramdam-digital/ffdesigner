@@ -25,10 +25,7 @@
   box-sizing: border-box;} 
 #masthead .top-strip .search-form .search-input:focus{outline: none; width: 120px;}
 #masthead .top-strip .search-form input[type=submit].submit{background: url(icone_recherche.png) no-repeat; height: 0; width: 0; border: none; margin: 0; padding: 12px;}
-#masthead .top-strip .newsletter{position: absolute; height: 30px; width: 140px; background: #000; right: 2%; bottom: -30px; color: #FFF; text-align: center;}
-#masthead .top-strip .newsletter span{text-transform: uppercase; font-size: 11px; cursor: pointer;}
-#masthead .top-strip .newsletter .cover{padding: 15px 0; ; background: #000; display: none;}
-#masthead .top-strip .newsletter .cover img{max-height: 140px; max-width: 140px;}
+
 
 
 
@@ -40,15 +37,20 @@
 #masthead .top-strip .right ul.menu-right li.connexion{position: relative;}
 #masthead .top-strip .right ul.menu-right li.connexion.bgwhite{background: #fff;}
 #masthead .top-strip .right ul.menu-right li.connexion.bgwhite a{color: #000;}
-#masthead .top-strip .right ul.menu-right li.connexion .box{padding: 10px; height: 160px; width: 140px; background: #FFF; border: 1px solid #000; position: absolute; left: -1px; bottom: -180px; border-top: none; z-index: 1000; display: none; line-height: 12px;}
+#masthead .top-strip .right ul.menu-right li.connexion .box{padding: 10px 10px 0 10px; height: 140px; width: 163px; background: #FFF; border: 1px solid #000; position: absolute; left: -1px; bottom: -150px; border-top: none; z-index: 1000; display: none; line-height: 12px;}
 #masthead .top-strip .right ul.menu-right li.connexion:hover{background: #fff;}
 #masthead .top-strip .right ul.menu-right li.connexion:hover a{color: #000};
 
 #masthead .top-strip .right ul.menu-right li.connexion .box label{font-size: 12px !important; color: #000 !important; margin: 0 !important;}
 #masthead .top-strip .right ul.menu-right li.connexion .box .input{font-size: 12px; height: 18px; border: 1px solid #000;}
-#masthead .top-strip .right ul.menu-right li.connexion .box p{margin: 10px 0; font-size: 12px; color: #000; font-family: 'Helvetica', arial;}
+#masthead .top-strip .right ul.menu-right li.connexion .box p{margin: 5px 0; font-size: 12px; color: #000; font-family: 'Helvetica', arial;}
 #masthead .top-strip .right ul.menu-right li.connexion .box p a{font-size: 12px; color: #666; font-family: 'Helvetica', arial;}
 #masthead .top-strip .right ul.menu-right li.connexion .box .btn{height: 18px; border: none; background: #000; color: #fff; font-size: 12px;}
+
+#masthead .top-strip .right .newsletter{background: #000; color: #FFF; text-align: center; height: 50px; float: left; border-right: 2px solid #FFF; width: 140px; line-height: 50px; margin-bottom: 0;}
+#masthead .top-strip .right .newsletter span{text-transform: uppercase; font-size: 11px; cursor: pointer; font-weight: bold; color: #AB0634; font-family: 'HelveticaNeueBold', sans-serif;}
+#masthead .top-strip .right .newsletter .cover{padding: 0px; background: #000; display: none; width: 140px; margin-top: -10px !important;}
+#masthead .top-strip .right .newsletter .cover img{max-height: 140px; max-width: 140px;}
 
 
 #masthead #branding{margin-top: 80px;}
@@ -59,19 +61,24 @@
 #masthead .main-menu{border-bottom: 1px solid #000;}
 #masthead .main-menu .sub-menu {border-top-color: #000;}
 #masthead .main-menu ul li a{font-family: "Justus", Times, serif;font-size: 18px;}
+#masthead .main-menu ul li.red-menu a{color: #AB0634;}
+#masthead .main-menu ul li.gray-menu a{color: #CCC;}
+#masthead .main-menu ul li.gray-menu a:hover{color: #000;}
+#masthead .main-menu ul li.red-menu a:hover{color: #AB0634;}
 #masthead .main-menu > ul > li.sub-hover > a:after{border-color:transparent transparent #000;}
+#masthead .main-menu .sub-menu .sub-posts{background: #000;}
 
 .posts-slider { margin-bottom: 30px; }
 
 .posts-slider .flex-direction-nav a i{display: none;}
 .posts-slider .flex-direction-nav a.flex-next{background: url(gauche.png) no-repeat; border: none; padding-right:3px; padding-bottom: 3px; }
 .posts-slider .flex-direction-nav a.flex-prev{background: url(droite.png) no-repeat; border: none; padding-right:3px; padding-bottom: 3px; }
+.posts-slider .flex-next:hover, .posts-slider .flex-prev:hover {box-shadow: 2px 2px 0 #CCC;text-shadow: 2px 2px 0 #CCC;}
 
-
-.grids.masonry-layout.entries.masonry article.post{height: 400px;}
+.grids.masonry-layout.entries.masonry article.post{height: 450px;}
 .entries article .entry-image{height: 300px;}
-.entry-summary p{height: 50px; text-align: justify; font-size: 14px;font-family: 'Helvetica', arial; color: #000;}
-article.post h2.entry-title{text-transform: none; text-align: left; margin-bottom: 0; padding-bottom: 0; font-family: 'Justus'; font-size: 20px;}
+.entry-summary p{ text-align: justify; font-size: 14px;font-family: 'Helvetica', arial; color: #000;}
+article.post h2.entry-title{text-transform: none; text-align: left; margin-bottom: 0; padding-bottom: 0; font-family: 'Justus'; font-size: 20px; letter-spacing: 0; height: 46px;}
 article.post .entry-meta{text-transform: none; text-align: left; font-size: 16px;}
 article.post .entry-meta a{text-decoration: none; color:#BBB;font-family: 'HelveticaNeueBold';}
 
@@ -92,11 +99,11 @@ text-transform: uppercase;
 letter-spacing: 0.2em;}
 aside.sidebar .widget .newsletter-bouton{height: 37px; width: 13%; border: 1px solid #999; background: #111; color: #FFF; font-weight: bold;}
 
-.flexslider ul.slides li header.slide-content{position: absolute; bottom: 12%; right: 8%; height: 25%; width: 60%; background: #E5E5E5; opacity: 0.9; padding: 10px;}
-.flexslider ul.slides li header.slide-content h3{font-size: 50px; color: #000; font-family: "Justus", Times, serif;}
+.flexslider ul.slides li header.slide-content{position: absolute; bottom: 12%; right: 8%; /*height: 25%;*/ width: 60%; background: #E5E5E5; opacity: 0.9; padding: 10px;}
+.flexslider ul.slides li header.slide-content a{font-size: 50px; color: #000; font-family: "Justus", Times, serif; text-decoration: none; letter-spacing: 0.02em;}
 .flexslider ul.slides li header.slide-content p{font-size: 16px; color: #222; font-family: 'Helvetica', sans-serif;}
 
-.featured-posts header.section-header h2.title{border-top: 1px solid #000; border-bottom: 1px solid #000; padding: 20px 0; text-transform: none; font-family:  "Justus", Times, serif;}
+.featured-posts header.section-header h2.title{border-top: 1px solid #000; border-bottom: 1px solid #000; padding: 20px 0; text-transform: none; font-family:  "Justus", Times, serif; letter-spacing: 0.01em;}
 
 section.featured-posts{border-bottom: 1px solid #000;}
 section.featured-posts.no-border{border:none; margin-top: 50px;}
@@ -222,7 +229,7 @@ h4.ffd{padding-bottom: 10px; width:100%; background: url(h4_border.png) no-repea
 .abn span{background: url(bulleprix.png) no-repeat; height: 32px; width: 76px; position: absolute; left: 50%; top: -10%; color: #FFF; text-align: center; line-height: 27px; display: none;}
 
 
-#ffd-top-banner{height: auto;width: 720px; border: none; display: block; padding: 0;}
+#ffd-top-banner{height: auto; width: 728px; border: none; display: block; padding: 0; overflow: hidden;}
 #ffd-top-banner img{border: none; padding:0; margin:0;}
 
 @media only screen and (max-width: 1050px) {
@@ -233,20 +240,26 @@ h4.ffd{padding-bottom: 10px; width:100%; background: url(h4_border.png) no-repea
 }
 
 
-@media only screen and (max-width: 720px) {
-	#ffd-top-banner{display: none;}
+@media only screen and (max-width: 959px) {
 	#masthead .top-strip .contact_link{display: none;}
+	#masthead .top-strip{position: absolute;}
+
+}
+
+@media only screen and (max-width: 728px) {
+	#ffd-top-banner{display: none;}
 	#masthead .top-strip .search-form{display: none;}
 	.list_carousel {margin: 30px auto;	width: 100%;}
 	.list_carousel li {margin-right: 0;}
 	footer#ffd-footer{height: 90px;}
 	#ffd-footer ul.footer-menu{top: 30px;}
-
+	#masthead .top-strip .right{width: 45%;}
+	#masthead .top-strip .left{width: 45%;}
+	#masthead .top-strip .right .newsletter{border-right: none;}
+	#masthead .top-strip .right ul.menu-right{display: none;}
 }
 
 @media only screen and (max-width: 450px) {
-	#masthead .top-strip .right{display: none;}
 	#masthead .top-strip .logo{border-right: none; }
-	#masthead .top-strip .newsletter{bottom: 0px;}
-
+	
 }

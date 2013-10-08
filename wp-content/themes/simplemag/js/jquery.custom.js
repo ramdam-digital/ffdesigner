@@ -2,9 +2,9 @@
 	
 jQuery(document).ready(function($) {
 
-	/*$('#masthead .top-strip .newsletter span').mouseover(function(){
+	$('#masthead .top-strip .newsletter span').mouseover(function(){
 		$('#masthead .top-strip .newsletter .cover').slideDown();
-	});*/
+	});
 
 	$('#masthead .top-strip .newsletter span').click(function(){
 		$('#masthead .top-strip .newsletter .cover').slideToggle();
@@ -15,7 +15,34 @@ jQuery(document).ready(function($) {
 		$('#masthead .top-strip .right ul.menu-right li.connexion').toggleClass('bgwhite');
 	});
 
-	
+	var inside_menu = false;
+	$( "#masthead .main-menu ul li" ).each(function() {
+		if($(this).hasClass( "current-menu-item" )){
+			inside_menu = true;
+		}
+	});
+	if(inside_menu){
+		$( "#masthead .main-menu ul li" ).each(function() {
+			if($(this).hasClass( "current-menu-item" ) == false){
+				$(this).addClass("gray-menu");
+			}
+		});
+	}
+
+
+
+	$("#myobject").mouseover(function(){
+		$("#myobject").css('height', '550px');
+		$("#myobject").css('width', '730px');
+	});
+
+	$("#myobject").mouseout(function(){
+		$("#myobject").css('height', '100px');
+		$("#myobject").css('width', '730px');
+	});
+
+
+
 
 
 

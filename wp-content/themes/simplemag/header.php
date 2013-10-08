@@ -70,6 +70,12 @@ $site_favicon = get_template_directory_uri() . '/images/favicon.ico';
 
                 </div>
                 <div class="right">
+                    <div class="newsletter">
+                        <span>Abonnez-vous</span>
+                        <div class="cover">
+                            <a href="<?php echo esc_url( home_url( '/abonnez-vous' ) ); ?>"><img src="<?php echo get_template_directory_uri() . '/custom/cover.png';?>"></a>
+                        </div>
+                    </div>
                     <ul class="menu-right">
                         <?php if ( !is_user_logged_in() ): ?>
                         <li class="connexion">
@@ -106,16 +112,12 @@ $site_favicon = get_template_directory_uri() . '/images/favicon.ico';
                         <?php endif; ?>
 
                     </ul>
+
                 </div>
 
             </div><!-- .wrapper -->
 
-            <div class="newsletter">
-                <span>Abonnez-vous</span>
-                <div class="cover">
-                    <a href="<?php echo esc_url( home_url( '/abonnez-vous' ) ); ?>"><img src="<?php echo get_template_directory_uri() . '/custom/cover.png';?>"></a>
-                </div>
-            </div>
+            
 
         </div><!-- .top-strip -->
             
@@ -148,10 +150,15 @@ $site_favicon = get_template_directory_uri() . '/images/favicon.ico';
                 </span>
                 <?php } ?>-->
 
-            <div id="ffd-top-banner">
-                <img src="<?php echo get_template_directory_uri() . '/custom/banner720x90.png';?>">
+            <!--<div id="ffd-top-banner">
+                <img src="<?php echo get_template_directory_uri() . '/custom/banner/0-Dior-Ad.png';?>">
+            </div>-->
+            <div id="myobject">
+                <object type="text/html" data="<?php echo get_template_directory_uri() . '/custom/banner/banner-dior.html';?>"
+                        style="overflow:visible;  width:100%; height:100%;">
+                </object>
             </div>
-                
+                                
                 
             </div>
             
