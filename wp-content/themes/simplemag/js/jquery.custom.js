@@ -31,7 +31,7 @@ jQuery(document).ready(function($) {
 
 
 
-	$("#myobject").mouseover(function(){
+	/*$("#myobject").mouseover(function(){
 		$("#myobject").css('height', '550px');
 		$("#myobject").css('width', '730px');
 	});
@@ -39,7 +39,7 @@ jQuery(document).ready(function($) {
 	$("#myobject").mouseout(function(){
 		$("#myobject").css('height', '100px');
 		$("#myobject").css('width', '730px');
-	});
+	});*/
 
 
 

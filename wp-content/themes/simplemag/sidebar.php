@@ -16,10 +16,16 @@
 		}
 
     ?>
+
     <div id="banner" class="widget">
 		<div class="side-banner">
-    		<img src="<?php echo get_template_directory_uri() . '/custom/banner250x250.png';?>">
+    		<?php
+                $category = get_the_category();
+                $category_id = $category[0]->cat_ID;
+                $banner = get_banners("side", $category_id);
+            ?>
     	</div>
     </div>
+
     
     </aside><!-- .sidebar -->

@@ -101,7 +101,7 @@ global $ti_option;
 				<?php } ?>
             
             
-                <div class="single-box clearfix entry-content">
+                <div class="single-box clearfix entry-content nomarginbottom">
                 	<?php the_content(); ?>
                     <?php
 						$args = array(
@@ -181,6 +181,7 @@ global $ti_option;
                             <a href="https://plusone.google.com/_/+1/confirm?hl=en-US&amp;url=<?php the_permalink() ?>" target="_blank"><?php _e( 'Google +', 'themetext' ); ?></a>
                         </li>-->
                     </ul>
+                    <span>Partager</span>
                 </div><!-- social-box -->
                 <?php } ?>
                 

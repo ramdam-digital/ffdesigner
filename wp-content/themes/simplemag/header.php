@@ -149,15 +149,24 @@ $site_favicon = get_template_directory_uri() . '/images/favicon.ico';
                     <?php bloginfo( 'description' ); ?>
                 </span>
                 <?php } ?>-->
+            
 
-            <!--<div id="ffd-top-banner">
-                <img src="<?php echo get_template_directory_uri() . '/custom/banner/0-Dior-Ad.png';?>">
-            </div>-->
-            <div id="myobject">
+            
+
+
+            <div id="ffd-top-banner">
+                <?php
+                    $category = get_the_category();
+                    $category_id = $category[0]->cat_ID;
+                    $banner = get_banners("top", $category_id);
+                ?>
+            </div>
+
+            <!--<div id="myobject">
                 <object type="text/html" data="<?php echo get_template_directory_uri() . '/custom/banner/banner-dior.html';?>"
                         style="overflow:visible;  width:100%; height:100%;">
                 </object>
-            </div>
+            </div>-->
                                 
                 
             </div>
