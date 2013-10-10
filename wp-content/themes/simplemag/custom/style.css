@@ -84,7 +84,8 @@ article.post .entry-meta a{text-decoration: none; color:#BBB;font-family: 'Helve
 
 
 aside.sidebar{background: #000; margin-bottom: 20px;}
-aside.sidebar .widget .side-banner{height: 250px;width: 250px;margin: auto;}
+aside.sidebar .widget .side-banner{height: 250px;width: 250px;margin: auto; padding:0; }
+aside.sidebar .widget .side-banner object{height: 250px;width: 250px;margin: 0;}
 .sidebar #searchform{background: #fff;}
 aside.sidebar .widget{border-top: 1px solid #fff;}
 aside.sidebar .widget .textwidget{color: #fff;}
@@ -144,6 +145,10 @@ section#content article .single-box.nav-single i.icon-chevron-left{background: u
 section#content article .single-box.nav-single i:before{content:none;}
 section#content article .single-box{margin-bottom: 10px;}
 section#content article .single-box.nomarginbottom{margin-bottom: 0px;}
+section#content article .single-box.nomarginbottom p{min-height: 50px;}
+.single .entry-content p:first-child:first-letter {font-family: 'Justus', Times;}
+
+h3.related-posts-title{font-family:  'Justus', Times, serif; letter-spacing: 0; font-size: 28px; border-bottom: 1px solid #000; text-transform: none; color: #000; margin-bottom:30px; padding-bottom: 10px;}
 
 #social-box.single-box{padding-top: 10px;margin-bottom: 10px;}
 #social-box.single-box span{line-height: 0px;font-family: 'Helvetica', Times, serif; font-size: 14px; text-transform: uppercase; display: block; float: left; margin-top: 12px;}
@@ -233,8 +238,9 @@ h4.ffd{padding-bottom: 10px; width:100%; background: url(h4_border.png) no-repea
 .abn span{background: url(bulleprix.png) no-repeat; height: 32px; width: 76px; position: absolute; left: 50%; top: -10%; color: #FFF; text-align: center; line-height: 27px; display: none;}
 
 
-#ffd-top-banner{height: auto; width: 728px; border: none; display: block; padding: 0; overflow: hidden;}
+#ffd-top-banner{height: 90px; width: 728px; border: none; display: block; padding: 0; overflow: hidden;}
 #ffd-top-banner img{border: none; padding:0; margin:0;}
+#ffd-top-banner object{height: 90px; width: 728px;}
 
 @media only screen and (max-width: 1050px) {
 	footer#ffd-footer{width: 90%;}

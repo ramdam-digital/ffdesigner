@@ -26,7 +26,10 @@ if( $related_posts ):
 ?>
 
 <section class="featured-posts no-border">
-                
+       <h3 class="entry-title related-posts-title">
+            <?php echo $ti_option['single_related_title']; ?>
+        </h3>
+            
     <div class="grids entries">
 
     <?php foreach( $related_posts as $post ): setup_postdata( $post ); ?>

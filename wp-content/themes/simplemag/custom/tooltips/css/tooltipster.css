@@ -5,19 +5,25 @@ html {
 
 /* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
 .tooltipster-default {
-	border-radius: 5px; 
+	/*border-radius: 5px; */
 	/*border: 2px solid #000;*/
-	background: #BBB;
+	background: #000;
 	color: #fff;
+	border: 1px solid #000;
+	border-left: none;
 }
+
+.tooltipster-default img{width:254px; height:195px; margin:0; padding:0; border:none;}
+.tooltipster-default h3{width:240px;height:40px; background:#000; color:#FFF; margin:7px 7px 0 7px;  font-size:16px; text-align:center; font-family:'Justus', arial; overflow: hidden;}
 
 /* Use this next selector to style things like font-size and line-height: */
 .tooltipster-default .tooltipster-content {
 	font-family: Arial, sans-serif;
 	font-size: 14px;
 	line-height: 16px;
-	padding: 8px 10px;
+	padding: 0px;
 	overflow: hidden;
+	text-align: center;
 }
 
 /* This next selector defines the color of the border on the outside of the arrow. This will automatically match the color and size of the border set on the main tooltip styles. Set display: none; if you would like a border around the tooltip but no border around the arrow */
